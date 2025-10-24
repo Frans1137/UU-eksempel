@@ -17,25 +17,26 @@
       <span class="logo" aria-hidden="true"></span> <!-- bevisst: viktig info kun i bilde uten tekstalternativ -->
       <span class="site-title">Min side</span>
     </header>
-
     <nav>
-      <a href="#">Hjem</a>
-      <a href="#">Om oss</a>
-      <div class="dropdown">
-        <a href="#">Tjenester</a>
-        <ul>
-          <li><a href="#">Design</a></li>
-          <li><a href="#">Utvikling</a></li>
-          <li><a href="#">Konsulent</a></li>
-        </ul>
-      </div>
-      <a href="#">Kontakt</a>
+      <ul>
+        <li><a href="#">Hjem</a></li>
+        <li><a href="#">Om oss</a></li>
+        <li>
+          <details>
+            <summary>Tjenester</summary>
+            <ul>
+              <li><a href="#">Design</a></li>
+              <li><a href="#">Utvikling</a></li>
+              <li><a href="#">Konsulent</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
     </nav>
-
-    <section id="ticker">
-      <p>Viktig beskjed: Les dette! Klikk her! Klikk her! Klikk her! Veldig viktig! ✨</p>
+    <section>
+      <h2>Viktig beskjed: Les dette! Klikk her! Klikk her! Klikk her! Veldig viktig!</h2>
     </section>
-
         <aside>
           <section>
             <h4>Nyheter</h4> <!-- bevisst: hopper over h1/h2/h3 -->
@@ -46,7 +47,6 @@
             <p class="status-ok">Tilgjengelig</p>
             <p class="status-bad">Utilgjengelig</p>
           </section>
-
           <section>
             <h4>Språk</h4>
             <p>
@@ -55,38 +55,51 @@
             </p>
           </section>
         </aside>
-
         <main>
           <h1>
             VELKOMMEN TIL DEN BESTE SIDEN NOENSINNE (LES VIKTIG TEKST HER OVER BAKGRUNNSBILDE)
           </h1>
-
         <section>
-
           <div class="card shout">
             <div class="narrow">
               <h2>
                 Denne teksten er veldig vanskelig å lese fordi den er smal, i store bokstaver og har lav kontrast. Den er også justert med blokkjustering som kan skape store mellomrom i linjene. Klikk her for mer info.
               </h2>
-
-
+            </div>
+          </div>
           <div class="card form">
             <h4>Kontakt oss</h4>
             <!-- bevisst: ingen <label> og kun placeholder, dupliserte id-er, dårlig kontrast, farge som eneste signal -->
-            <input type="text" id="navn" placeholder="Navn*">
-            <input type="email" id="navn" placeholder="E-post*"> <!-- bevisst: duplisert id -->
-            <input type="tel" placeholder="Telefon">
-            <select>
-              <option>Velg tema*</option>
-              <option>Bestilling</option>
-              <option>Support</option>
-            </select>
-            <textarea rows="3" placeholder="Melding..."></textarea>
-            <p class="help">Felt merket med <span class="required">rød farge</span> er obligatoriske.</p>
-            <p class="error">skjemaet er feil utfylt</p> <!-- bevisst: lav kontrast på feilmelding, små bokstaver -->
-            <span class="fake-submit" role="button" tabindex="5">Send</span> <!-- bevisst: span som knapp, positiv tabindex -->
-          </div>
+            <form>
+              <label>
+                Navn:
+                <input type="text" id="navn" placeholder="Kari Nordmann" required>
+              </label>
+              <label>
+                E-post:
+                <input type="email" id="email" placeholder="eksempel@hiof.no" required>
+              </label>
+              <label>
+                Telefon:
+                <input type="tel" placeholder="90 90 90 90" required>
+              </label>
 
+              <label for="service">Tjeneste</label>
+              <select id="service">
+                <option>Velg tema*</option>
+                <option>Bestilling</option>
+                <option>Support</option>
+              </select>
+
+              <label>Melding
+              <textarea rows="3" placeholder="Melding.."></textarea>
+              </label>
+
+              <p class="help">Felt merket med <span class="required">rød farge</span> er obligatoriske.</p>
+              <p class="error">skjemaet er feil utfylt</p> <!-- bevisst: lav kontrast på feilmelding, små bokstaver -->
+              <input type="submit" value="Send">
+            </form>
+          </div>
           <div class="card weird-order">
             <h4>Mer innhold</h4>
             <p>
@@ -98,16 +111,14 @@
               <span class="btn" tabindex="4">Primær handling</span>
             </p>
           </div>
-
           <div class="card">
             <h4>Tabell uten overskrifter</h4>
-            <table border="1" width="100%">
+            <table>
               <tr><td>1</td><td>2</td><td>3</td></tr>
               <tr><td>4</td><td>5</td><td>6</td></tr>
               <tr><td>7</td><td>8</td><td>9</td></tr>
             </table>
           </div>
-
           <div class="card">
             <h4>Masse lenker med samme tekst</h4>
             <ul>
@@ -119,13 +130,12 @@
           </div>
         </section>
         </main>
-
     <footer>
         <!-- bevisst: kontaktinfo kun i bilde uten alt-tekst -->
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Facebook_icon.svg">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Twitter_logo.svg">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
-      <p style="font-size:10px; color:#bfbfbf">© 2025 ACME</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Facebook_icon.svg" alt="facebook-ikon for lenke til facebook-sied">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Twitter_logo.svg" alt="twitter-logo for lenke til twitter-side">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="instagram-ikon for lenke til instagram-side">
+      <p>© 2025 ACME</p>
     </footer>
   </body>
 </html>
